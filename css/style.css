@@ -395,7 +395,7 @@ body {
     
     .project-row.reverse { flex-direction: row-reverse; }
     .project-image-wrapper, .project-text { flex: 1; }
-    .image-card img { height: 500px; }
+    .image-card img { height: 300px; }
 }
 
 @media (max-width: 991px) {

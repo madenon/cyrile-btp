@@ -3,8 +3,13 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>À Propos | Cyril BTP</title>
     
+    <title>À Propos de Cyril BTP | Artisan Français à Marcheprime (33)</title>
+    
+    <meta name="description" content="Découvrez l'histoire de Cyril BTP, entreprise française de travaux publics à Marcheprime. 15 ans de savoir-faire en démolition et terrassement au service de la Gironde.">
+
+    <link rel="canonical" href="https://www.cyril-btp.fr/about.html" />
+
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="css/about.css">
     <link rel="stylesheet" href="css/footer.css">
@@ -13,14 +18,30 @@
     <script src="https://unpkg.com/lucide@latest"></script>
 
     <style>
-        /* --- STYLE DE LA CARTE DE VISITE --- */
+        /* --- ACCENTUATION FRANÇAISE SUBTILE --- */
+        .text-orange {
+            position: relative;
+            display: inline-block;
+        }
+        
+        /* Petit rappel tricolore sous le titre principal */
+        .orange-bar::after {
+            content: "";
+            display: block;
+            width: 30px;
+            height: 3px;
+            background: linear-gradient(to right, #002395 33%, #ffffff 33%, #ffffff 66%, #ed2939 66%);
+            margin-top: 10px;
+            border-radius: 2px;
+        }
+
+        /* Style existant de la carte de visite */
         .cart-cisite {
             width: 100%;
             max-width: 400px;
             margin: 20px auto;
             perspective: 1000px;
         }
-
         .carte {
             width: 100%;
             height: auto;
@@ -31,13 +52,10 @@
             cursor: pointer;
             display: block;
         }
-
         .carte:hover {
             transform: translateY(-10px) rotateX(5deg);
             box-shadow: 0 15px 35px rgba(255, 102, 0, 0.3);
         }
-
-        /* Ajustement Footer pour la carte */
         .footer-bottom-wrapper {
             display: flex;
             flex-direction: column;

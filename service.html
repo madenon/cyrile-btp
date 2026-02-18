@@ -3,14 +3,48 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Nos Services | Cyril BTP</title>
     
+    <title>Nos Services : Démolition & Terrassement à Marcheprime | Cyril BTP</title>
+    
+    <meta name="description" content="Découvrez l'expertise française de Cyril BTP : démolition, terrassement industriel, curage de bâtiment et élagage à Marcheprime (33). Services de haute qualité pour particuliers et professionnels.">
+
+    <link rel="canonical" href="https://www.cyril-btp.fr/service.html" />
+
+    <meta property="og:title" content="Services de Démolition et Terrassement - Cyril BTP" />
+    <meta property="og:description" content="Artisan français spécialisé dans les travaux publics à Marcheprime. Démolition, terrassement et aménagement." />
+    <meta property="og:image" content="https://www.cyril-btp.fr/images/lg.png" />
+
     <link href="https://fonts.googleapis.com/css2?family=Anton&family=Montserrat:wght@400;600;700;800;900&display=swap" rel="stylesheet">
     <script src="https://unpkg.com/lucide@latest"></script>
 
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="css/service.css"> 
     <link rel="stylesheet" href="css/footer.css">
+
+    <style>
+        .service-tag {
+            border-left: 3px solid #002395; /* Touche bleu France */
+            border-right: 3px solid #ed2939; /* Touche rouge France */
+            padding: 0 10px;
+        }
+        /* Style pour la carte de visite déjà présent dans votre code */
+        .cart-cisite {
+            width: 100%;
+            max-width: 400px;
+            margin: 60px auto;
+            perspective: 1000px;
+        }
+        .carte {
+            width: 100%;
+            height: auto;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+            transition: all 0.4s ease;
+        }
+        .carte:hover {
+            transform: translateY(-10px) rotateX(5deg);
+        }
+    </style>
 </head>
 <body>
 
@@ -168,12 +202,11 @@
 
         // --- DONNÉES SERVICES ---
         const servicesData = [
-            { id: "01", titre: "Démolition de précision", tag: "SÉCURITÉ", desc: "Déconstruction sélective pour structures béton et métal.", img: "images/demoli.png", details: "Gestion du tri des matériaux et évacuation des gravats en centre agréé." },
-            { id: "02", titre: "Terrassement complet", tag: "GROS OEUVRE", desc: "Préparation des sols pour fondations e.", img: "images/amen.png", details: "Nivellement de terrain, tranchées pour réseaux (VRD) et plateforme." },
-            { id: "03", titre: "Déconstruction Sélective", tag: "RÉNOVATION", desc: "Travaux de démolition intérieure et curage de bâtiments.", img: "images/desconst_.png", details: "Dépose propre des cloisons, sols et plafonds." },
-            { id: "04", titre: "Dessouchage & Nettoyage", tag: "EXTÉRIEUR", desc: "Préparation de terrain et retrait de souches encombrantes.", img: "images/desouchage.png", details: "Extraction de racines et nivellement pour vos futurs projets." },
-            { id: "05", titre: "Maçonnerie Générale", tag: "STRUCTURE", desc: "Construction de murs, dalles et structures porteuses.", img: "images/im_1.png", details: "Réalisation de dalles béton, murets de clôture et extensions." },
-            { id: "06", titre: "Aménagements Durables", tag: "FINITION", desc: "Création de terrasses, murets et accès extérieurs.", img: "images/ans.png", details: "Aménagements paysagers minéraux et accès carrossables." }
+            { id: "01", titre: "Déconstruction mécanique sécurisée.", tag: "SÉCURITÉ", desc: "Phase initiale de démolition à l'aide d'un engin de chantier (pelleteuse JCB) pour libérer l'espace avant reconstruction. Cette opération est menée avec précision pour abattre les structures existantes tout en gérant les gravats de manière organisée", img: "images/demoli.png", details: "Installation des canalisations d'évacuation en PVC le long des fondations. Cette étape cruciale de VRD (Voirie et Réseaux Divers) assure le bon acheminement des eaux avant le remblayage final.." },
+            { id: "02", titre: "Réalisation d'une allée en pierre naturelle (Opus Incertum).", tag: "GROS OEUVRE", desc: "Pose soignée d'un dallage en pierres naturelles aux formes irrégulières, créant un charme authentique et robuste. Ce revêtement est idéal pour les accès de garage ou les terrasses.", img: "images/amen.png", details: "offrant une grande durabilité et une esthétique élégante qui s'intègre parfaitement à l'architecture traditionnelle." },
+            { id: "03", titre: "Curage de bâtiment et mise à nu des structures.", tag: "RÉNOVATION", desc: "Cette phase de rénovation intérieure consiste à retirer les anciens revêtements et cloisons non porteuses pour mettre à nu la structure (briques et béton). Ce travail de préparation méticuleux permet de repartir sur une base saine pour la redistribution des espaces, l'électricité et la plomberie", img: "images/desconst_.png", details: "Cette phase de rénovation intérieure consiste à retirer les anciens revêtements et cloisons non porteuses pour mettre à nu la structure (briques et béton). Ce travail de préparation méticuleux permet de repartir sur une base saine pour la redistribution des espaces, l'électricité et la plomberie." },
+            { id: "04", titre: "Élagage en hauteur et sécurisation d'arbres", tag: "EXTÉRIEUR", desc: "Intervention spécialisée pour la taille et l'entretien d'arbres de grande hauteur. Nos équipes assurent une coupe précise pour favoriser la santé de l'arbre tout en sécurisant.", img: "images/desouchage.png", details: " les abords du chantier (habitations, réseaux électriques). Nous disposons du matériel adapté pour travailler en toute sécurité, même dans les zones d'accès difficile.." },
+            { id: "06", titre: "Préparation de plateformes pour bâtiments industriels.", tag: "FINITION", desc: "Travaux d'excavation et de nivellement à grande échelle pour des structures professionnelles.", img: "images/ans.png", details: "À l'aide d'engins de forte puissance, nous assurons le déplacement de volumes importants de terre, la création de remblais compactés et la préparation précise du sol pour accueillir des hangars ou des entrepôts." }
         ];
 
         // --- INJECTION DES SERVICES ---
