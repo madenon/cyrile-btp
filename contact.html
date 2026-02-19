@@ -1,11 +1,263 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="fr">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+            <link rel="icon" type="image/png" href="images/lg.png" />
+
+    <title>Contact | Cyril BTP</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/contact.css">
+    <link rel="stylesheet" href="css/footer.css">
+    <link href="https://fonts.googleapis.com/css2?family=Anton&family=Montserrat:wght@400;600;700;800;900&display=swap" rel="stylesheet">
+    <script src="https://unpkg.com/lucide@latest"></script>
+
+    <style>
+        /* CONFIGURATION MENU MOBILE */
+        @media (max-width: 1024px) {
+            .nav-menu {
+                position: fixed;
+                top: 0;
+                right: -100%; 
+                width: 75%;
+                height: 100vh;
+                background: #0f172a; 
+                display: flex !important;
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
+                gap: 30px;
+                transition: all 0.4s ease-in-out;
+                z-index: 999;
+                padding: 0;
+                margin: 0;
+                list-style: none;
+            }
+
+            .nav-menu.active {
+                right: 0 !important;
+            }
+
+            .menu-toggle {
+                display: flex !important;
+                align-items: center;
+                justify-content: center;
+                z-index: 1000;
+                background: #ff6b00; 
+                border: none;
+                color: white;
+                width: 45px;
+                height: 45px;
+                border-radius: 5px;
+                cursor: pointer;
+            }
+
+            .nav-menu li a {
+                color: white !important;
+                font-size: 1.5rem;
+                font-family: 'Anton', sans-serif;
+                text-decoration: none;
+                text-transform: uppercase;
+            }
+
+            .nav-btn-devis {
+                display: none;
+            }
+        }
+
+        /* STYLE DE LA CARTE DE VISITE DANS LE FOOTER */
+        .cart-cisite {
+            width: 100%;
+            max-width: 400px;
+            margin-top: 20px;
+            display: flex;
+            justify-content: center;
+        }
+        .carte {
+            width: 100%;
+            height: auto;
+            border-radius: 12px;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+            transition: transform 0.3s ease;
+            border: 1px solid rgba(255,255,255,0.1);
+        }
+        .carte:hover {
+            transform: translateY(-5px);
+        }
+    </style>
 </head>
 <body>
-    
+
+    <nav class="navbar">
+        <div class="nav-container">
+            <a href="index.html" class="logo-block" style="text-decoration: none; color: inherit;">
+                <div class="logo-square"><img src="images/lg.png" alt="Logo"></div>
+                <div class="logo-text">
+                    <h1>CYRIL <span>BTP</span></h1>
+                    <p>EXPERTISE & RIGUEUR</p>
+                </div>
+            </a>
+            
+            <ul class="nav-menu" id="navMenu">
+                <li><a href="index.html">ACCUEIL</a></li>
+                <li><a href="service.html">SERVICES</a></li>
+                <li><a href="realisation.html">RÉALISATIONS</a></li>
+                <li><a href="about.html">À PROPOS</a></li>
+                <li><a href="contact.html" class="active">CONTACT</a></li>
+            </ul>
+
+            <div class="nav-contact-wrapper">
+                <a href="tel:+33622892916" class="nav-phone">
+                    <i data-lucide="phone"></i>
+                    <span>06 22 89 29 16</span>
+                </a>
+                <a href="contact.html" class="nav-btn-devis">Contact d'urgence</a>
+                
+                <button class="menu-toggle" id="mobile-menu">
+                    <i data-lucide="menu"></i>
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <section class="contact-hero">
+        <div class="container">
+            <div class="contact-header-text">
+                <h2 class="fade-in">Parlons de votre <span>Projet</span></h2>
+                <div class="orange-bar-center"></div>
+                <p class="fade-in-delay">Une question ? Un devis ? Nos experts sont à votre écoute pour vous accompagner dans vos travaux de construction et rénovation.</p>
+            </div>
+
+            <div class="contact-cards-container">
+                <div class="contact-card slide-up">
+                    <div class="card-icon"><i data-lucide="phone-call"></i></div>
+                    <h3>TÉLÉPHONE</h3>
+                    <p>Conseils & Devis gratuits</p>
+                    <a href="tel:+33622892916" class="card-link">06 22 89 29 16</a>
+                </div>
+
+                <div class="contact-card slide-up" style="animation-delay: 0.2s;">
+                    <div class="card-icon"><i data-lucide="mail"></i></div>
+                    <h3>EMAIL</h3>
+                    <p>Réponse sous 24h</p>
+                    <a href="mailto:cyrilbenony@gmail.com" class="card-link">cyrilbenony@gmail.com</a>
+                </div>
+
+                <div class="contact-card slide-up" style="animation-delay: 0.4s;">
+                    <div class="card-icon"><i data-lucide="map-pin"></i></div>
+                    <h3>LOCALISATION</h3>
+                    <p>Siège social</p>
+                    <span class="card-text">11 Av. de la Côte d'Argent<br>33380 Marcheprime, France</span>
+                </div>
+            </div>
+
+            <div class="info-footer-contact fade-in-up">
+                <div class="info-item">
+                    <i data-lucide="clock"></i>
+                    <span><strong>Lundi - Vendredi :</strong> 08:00 - 18:00</span>
+                </div>
+                <div class="info-item">
+                    <i data-lucide="hash"></i>
+                    <span><strong>SIRET :</strong> 494 262 371</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="map-section fade-in-up">
+        <div class="container">
+            <div class="map-container">
+                <iframe 
+                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2836.568285521798!2d-0.8576403233886566!3d44.6875953855523!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xd549666063469e3%3A0xb14d173c332e7f3a!2s11%20Av.%20de%20la%20C%C3%B4te%20d'Argent%2C%2033380%20Marcheprime!5e0!3m2!1sfr!2sfr!4v1710000000000!5m2!1sfr!2sfr" 
+                    width="100%" 
+                    height="450" 
+                    style="border:0;" 
+                    allowfullscreen="" 
+                    loading="lazy" 
+                    referrerpolicy="no-referrer-when-downgrade">
+                </iframe>
+                <div class="map-badge">
+                    <i data-lucide="navigation"></i>
+                    <span>Secteur : Gironde & Bassin d'Arcachon</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-column brand-info">
+                    <div class="logo-footer">
+                        <img src="images/lg.png" alt="Logo Cyril BTP">
+                        <span>CYRIL <strong>BTP</strong></span>
+                    </div>
+                    <p class="footer-desc">
+                        Expertise en démolition, terrassement et rénovation en Gironde.
+                    </p>
+                    <div class="social-links">
+                        <a href="#"><i data-lucide="facebook"></i></a>
+                        <a href="#"><i data-lucide="instagram"></i></a>
+                    </div>
+                </div>
+
+                <div class="footer-column">
+                    <h4 class="footer-title">NOS EXPERTISES</h4>
+                    <ul class="footer-list">
+                        <li>Démolition</li>
+                        <li>Terrassement</li>
+                        <li>Aménagement</li>
+                        <li>Maçonnerie</li>
+                    </ul>
+                </div>
+
+                <div class="footer-column">
+                    <h4 class="footer-title">CONTACT DIRECT</h4>
+                    <div class="contact-box-footer">
+                        <a href="tel:+33622892916" class="contact-item">
+                            <i data-lucide="phone"></i>
+                            <span>06 22 89 29 16</span>
+                        </a>
+                        <div class="contact-item">
+                            <i data-lucide="map-pin"></i>
+                            <span>11 Av. de la Côte d'Argent<br>33380 Marcheprime</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="footer-column">
+                    <h4 class="footer-title">MA CARTE</h4>
+                    <div class="cart-cisite">
+                        <img class="carte" src="images/carte.jpeg" alt="Carte de visite Cyril BTP">
+                    </div>
+                </div>
+            </div>
+
+            <div class="footer-bottom">
+                <div class="copyright">© 2026 <strong>CYRIL BTP</strong> - TOUS DROITS RÉSERVÉS</div>
+                <div class="legal-links">
+                    <a href="mentions-legales.html">MENTIONS LÉGALES</a>
+                    <a href="politique.html">POLITIQUE DE CONFIDENTIALITÉ</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        lucide.createIcons();
+        
+        const menuBtn = document.getElementById('mobile-menu');
+        const navMenu = document.getElementById('navMenu');
+
+        if (menuBtn && navMenu) {
+            menuBtn.addEventListener('click', (e) => {
+                e.stopPropagation();
+                navMenu.classList.toggle('active');
+                const isOpen = navMenu.classList.contains('active');
+                menuBtn.innerHTML = isOpen ? '<i data-lucide="x"></i>' : '<i data-lucide="menu"></i>';
+                lucide.createIcons();
+            });
+        }
+    </script>
 </body>
 </html>
