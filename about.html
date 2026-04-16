@@ -380,10 +380,13 @@
     </footer>
 
  <script>
+document.addEventListener('DOMContentLoaded', () => {
     // Initialisation des icônes Lucide
-    lucide.createIcons();
+    if (typeof lucide !== 'undefined') {
+        lucide.createIcons();
+    }
 
-    // 1. SLIDER CHANTIER (HERO)
+    // --- 1. SLIDER CHANTIER (HERO) ---
     const slides = document.querySelectorAll('.slider-img');
     const bars = document.querySelectorAll('.bar');
     const prevBtn = document.getElementById('prevSlide');
@@ -403,7 +406,7 @@
     if(prevBtn) prevBtn.onclick = () => showSlide(current - 1);
     setInterval(() => showSlide(current + 1), 5000);
 
-    // 2. SLIDER AVIS (TESTIMONIALS)
+    // --- 2. SLIDER AVIS (TESTIMONIALS) ---
     const testiCards = document.querySelectorAll('.testimonial-card');
     const testiDots = document.querySelectorAll('.t-dot');
     let currentTesti = 0;
@@ -418,7 +421,7 @@
     }
     if(testiCards.length > 0) setInterval(() => showTesti(currentTesti + 1), 6000);
 
-    // 3. COMPTEURS (STATS)
+    // --- 3. COMPTEURS (STATS) ---
     const stats = document.querySelectorAll('.stat-value');
     const observer = new IntersectionObserver((entries) => {
         entries.forEach(entry => {
@@ -439,7 +442,7 @@
     }, { threshold: 0.5 });
     stats.forEach(s => observer.observe(s));
 
-    // 4. MENU MOBILE
+    // --- 4. MENU MOBILE ---
     const drawer = document.getElementById('mobileDrawer');
     const overlay = document.getElementById('drawerOverlay');
     const openBtn = document.getElementById('openMenu');
@@ -454,7 +457,7 @@
     if(closeBtn) closeBtn.onclick = () => toggleMenu(false);
     if(overlay) overlay.onclick = () => toggleMenu(false);
 
-    // 5. NOUVEL ALBUM PHOTO (HORIZONTAL SLIDER)
+    // --- 5. ALBUM PHOTO (HORIZONTAL SLIDER) ---
     const albumTrack = document.getElementById('albumTrack');
     const albumPrev = document.getElementById('prevAlbum');
     const albumNext = document.getElementById('nextAlbum');
@@ -465,35 +468,38 @@
         const cards = document.querySelectorAll('.album-card');
         if(cards.length === 0) return;
         
-        const cardWidth = cards[0].offsetWidth + 20; // 20 est le gap dans ton nouveau CSS
-        let offset = albumIndex * cardWidth;
+        // Calcul précis de la largeur + gap (20px)
+        const cardWidth = cards[0].getBoundingClientRect().width + 20; 
+        const offset = albumIndex * cardWidth;
         albumTrack.style.transform = `translateX(-${offset}px)`;
     }
 
     if(albumNext) {
-        albumNext.onclick = () => {
+        albumNext.onclick = (e) => {
             const cards = document.querySelectorAll('.album-card');
-            // On s'arrête avant que l'écran soit vide
             const visibleCards = window.innerWidth > 992 ? 2 : 1; 
             if(albumIndex < cards.length - visibleCards) {
                 albumIndex++;
             } else {
-                albumIndex = 0;
+                albumIndex = 0; 
             }
             updateAlbumPosition();
         };
     }
     if(albumPrev) {
         albumPrev.onclick = () => {
-            if(albumIndex > 0) albumIndex--;
+            if(albumIndex > 0) {
+                albumIndex--;
+            } else {
+                const cards = document.querySelectorAll('.album-card');
+                const visibleCards = window.innerWidth > 992 ? 2 : 1;
+                albumIndex = cards.length - visibleCards;
+            }
             updateAlbumPosition();
         };
     }
-    window.addEventListener('resize', updateAlbumPosition);
 
-    // ============================================================
-    // 6. LIGHTBOX (IMAGE PLEIN ÉCRAN) - AJOUTE BIEN CECI !
-    // ============================================================
+    // --- 6. LIGHTBOX (IMAGE PLEIN ÉCRAN TOTAL) ---
     const lightbox = document.getElementById('lightbox');
     const lightboxImg = document.getElementById('lightbox-img');
     const albumImages = document.querySelectorAll('.album-card img');
@@ -503,44 +509,68 @@
     let lbIndex = 0;
 
     function updateLightbox() {
-        lightboxImg.src = albumImages[lbIndex].src;
+        if (albumImages[lbIndex]) {
+            lightboxImg.style.opacity = '0';
+            setTimeout(() => {
+                lightboxImg.src = albumImages[lbIndex].src;
+                lightboxImg.style.opacity = '1';
+            }, 150);
+        }
     }
 
-    // Clic sur une image de l'album
+    // Activer le clic sur les images
     albumImages.forEach((img, i) => {
-        img.onclick = () => {
+        img.addEventListener('click', () => {
             lbIndex = i;
             updateLightbox();
             lightbox.classList.add('active');
             document.body.style.overflow = 'hidden';
-        };
+        });
     });
 
-    // Navigation dans la lightbox
-    if(lbNext) lbNext.onclick = (e) => {
-        e.stopPropagation();
-        lbIndex = (lbIndex + 1) % albumImages.length;
-        updateLightbox();
-    };
-    if(lbPrev) lbPrev.onclick = (e) => {
-        e.stopPropagation();
-        lbIndex = (lbIndex - 1 + albumImages.length) % albumImages.length;
-        updateLightbox();
-    };
+    if(lbNext) {
+        lbNext.onclick = (e) => {
+            e.stopPropagation();
+            lbIndex = (lbIndex + 1) % albumImages.length;
+            updateLightbox();
+        };
+    }
 
-    // Fermeture
-    if(closeLb) closeLb.onclick = () => {
-        lightbox.classList.remove('active');
-        document.body.style.overflow = '';
-    };
+    if(lbPrev) {
+        lbPrev.onclick = (e) => {
+            e.stopPropagation();
+            lbIndex = (lbIndex - 1 + albumImages.length) % albumImages.length;
+            updateLightbox();
+        };
+    }
 
-    // Fermer si clic sur le fond noir
-    if(lightbox) lightbox.onclick = (e) => {
-        if(e.target === lightbox) {
+    if(closeLb) {
+        closeLb.onclick = () => {
             lightbox.classList.remove('active');
             document.body.style.overflow = '';
-        }
-    };
+        };
+    }
+
+    // Fermer au clic sur le fond
+    if(lightbox) {
+        lightbox.onclick = (e) => {
+            if(e.target === lightbox || e.target.classList.contains('lightbox-content')) {
+                lightbox.classList.remove('active');
+                document.body.style.overflow = '';
+            }
+        };
+    }
+
+    // Support touches clavier (Echap, Gauche, Droite)
+    document.addEventListener('keydown', (e) => {
+        if (!lightbox.classList.contains('active')) return;
+        if (e.key === "Escape") closeLb.onclick();
+        if (e.key === "ArrowRight") lbNext.onclick(new Event('click'));
+        if (e.key === "ArrowLeft") lbPrev.onclick(new Event('click'));
+    });
+
+    window.addEventListener('resize', updateAlbumPosition);
+});
 </script>
 </body>
 </html>
