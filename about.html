@@ -6,22 +6,44 @@
     
     <link rel="icon" type="image/png" href="images/lg.png" />
     
-    <title>À Propos de Cyril BTP | Expert Terrassement Bassin d'Arcachon</title>
-    <meta name="description" content="Découvrez Cyril BTP, artisan français à Marcheprime. 15 ans d'expertise en démolition, terrassement et assainissement sur tout le Bassin d'Arcachon et la Gironde.">
+    <title>À Propos de Cyril BTP | 15 ans d'Expertise sur le Bassin d'Arcachon</title>
+    <meta name="description" content="Découvrez Cyril BTP, artisan français à Marcheprime. 15 ans d'expertise en terrassement, élagage, aménagement extérieur et démolition. Un savoir-faire reconnu en Gironde.">
 
     <link rel="canonical" href="https://cyrilbtp.info/about.html" />
 
     <meta property="og:type" content="website" />
-    <meta property="og:title" content="Cyril BTP - Notre Histoire et Savoir-faire" />
-    <meta property="og:description" content="Artisan spécialisé en travaux publics sur le Bassin d'Arcachon. Qualité et rigueur française." />
+    <meta property="og:title" content="Cyril BTP - 15 ans de savoir-faire en Travaux Publics" />
+    <meta property="og:description" content="L'histoire d'un artisan passionné au service de vos projets de terrassement et aménagement sur le Bassin d'Arcachon." />
     <meta property="og:image" content="https://cyrilbtp.info/images/lg.png" />
 
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="css/about.css">
     <link rel="stylesheet" href="css/footer.css">
     
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Anton&family=Montserrat:wght@400;600;800;900&display=swap" rel="stylesheet">
     <script src="https://unpkg.com/lucide@latest"></script>
+
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "AboutPage",
+      "mainEntity": {
+        "@type": "HomeAndConstructionBusiness",
+        "name": "Cyril BTP",
+        "foundingDate": "2018", 
+        "description": "Artisan expert avec 15 ans d'expérience dans le BTP, spécialisé en terrassement et aménagement extérieur à Marcheprime.",
+        "areaServed": "Bassin d'Arcachon",
+        "address": {
+          "@type": "PostalAddress",
+          "addressLocality": "Marcheprime",
+          "postalCode": "33380",
+          "addressCountry": "FR"
+        }
+      }
+    }
+    </script>
 
     <style>
         /* --- ACCENTUATION FRANÇAISE SUBTILE --- */
@@ -34,8 +56,9 @@
         .orange-bar::after {
             content: "";
             display: block;
-            width: 40px;
+            width: 45px;
             height: 4px;
+            /* Bleu, Blanc, Rouge pour l'identité française */
             background: linear-gradient(to right, #002395 33%, #ffffff 33%, #ffffff 66%, #ed2939 66%);
             margin: 10px auto 0;
             border-radius: 2px;
@@ -60,7 +83,7 @@
         }
         .carte:hover {
             transform: translateY(-10px) rotateX(5deg);
-            box-shadow: 0 15px 35px rgba(255, 102, 0, 0.3);
+            box-shadow: 0 15px 35px rgba(255, 107, 0, 0.4);
         }
         .footer-bottom-wrapper {
             display: flex;
@@ -159,6 +182,65 @@
                     </div>
                 </div>
             </div>
+
+            <!-- Album ici -->
+
+
+<section class="album-container">
+    <div class="album-header">
+        <div class="header-title-group">
+            <h3>NOS RÉALISATIONS</h3>
+            <span class="flag-label">Savoir-faire Français</span>
+        </div>
+        <div class="album-controls">
+            <button id="prevAlbum" class="control-btn" aria-label="Précédent">
+                <i data-lucide="chevron-left"></i>
+            </button>
+            <button id="nextAlbum" class="control-btn" aria-label="Suivant">
+                <i data-lucide="chevron-right"></i>
+            </button>
+        </div>
+    </div>
+
+    <div class="album-wrapper">
+        <div class="album-track" id="albumTrack">
+            <div class="album-card">
+                <img src="images/f1.jpg" alt="Travaux de terrassement à Marcheprime - Cyril BTP">
+            </div>
+            <div class="album-card">
+                <img src="images/f2.jpg" alt="Élagage et entretien de jardin Bassin d'Arcachon">
+            </div>
+            <div class="album-card">
+                <img src="images/f3.jpg" alt="Aménagement extérieur et création d'allées">
+            </div>
+            <div class="album-card">
+                <img src="images/f4.jpg" alt="Démolition et préparation de terrain 33">
+            </div>
+            <div class="album-card">
+                <img src="images/f5.jpg" alt="Pose d'enrobé et goudronnage Gironde">
+            </div>
+            <div class="album-card">
+                <img src="images/f6.jpg" alt="Assainissement et réseaux divers">
+            </div>
+            <div class="album-card">
+                <img src="images/f7.jpg" alt="Chantier de terrassement maison neuve">
+            </div>
+            <div class="album-card">
+                <img src="images/f8.jpg" alt="Nettoyage et débroussaillage de terrain">
+            </div>
+        </div>
+    </div>
+</section>
+
+<div id="lightbox" class="lightbox">
+    <span class="close-lightbox">&times;</span>
+    <button class="lightbox-btn prev" id="lbPrev"><i data-lucide="chevron-left"></i></button>
+    <div class="lightbox-content">
+        <img id="lightbox-img" src="" alt="Aperçu plein écran">
+    </div>
+    <button class="lightbox-btn next" id="lbNext"><i data-lucide="chevron-right"></i></button>
+</div>
+            
 
             <div class="stats-divider">
                 <div class="stat-item">
@@ -274,8 +356,10 @@
                     <p class="footer-desc">
                         Expertise en démolition, terrassement et aménagement. Nous bâtissons vos projets avec la rigueur d'un artisan passionné à Marcheprime.
                     </p>
-                    <div class="social-links">
-              <a href="https://www.facebook.com/share/1DgqxfAUC2/"><i data-lucide="facebook"></i></a>
+                    <div class="social-links facebook">
+    <a class="facebook" target="_blank" href="https://www.facebook.com/share/1DgqxfAUC2/">
+                
+                <i data-lucide="facebook" style="color: #002395; background-color: white; border-radius: 20px;"> Facebook</i></a>
                     </div>
                 </div>
 
@@ -340,81 +424,138 @@
         </div>
     </footer>
 
-    <script>
-        lucide.createIcons();
+  <script>
+    // Initialisation des icônes Lucide
+    lucide.createIcons();
 
-        // 1. SLIDER CHANTIER
-        const slides = document.querySelectorAll('.slider-img');
-        const bars = document.querySelectorAll('.bar');
-        const prevBtn = document.getElementById('prevSlide');
-        const nextBtn = document.getElementById('nextSlide');
-        let current = 0;
+    // 1. SLIDER CHANTIER (HERO)
+    const slides = document.querySelectorAll('.slider-img');
+    const bars = document.querySelectorAll('.bar');
+    const prevBtn = document.getElementById('prevSlide');
+    const nextBtn = document.getElementById('nextSlide');
+    let current = 0;
 
-        function showSlide(index) {
-            slides.forEach(s => s.classList.remove('active'));
-            bars.forEach(b => b.classList.remove('active'));
-            current = (index + slides.length) % slides.length;
-            slides[current].classList.add('active');
-            bars[current].classList.add('active');
-        }
+    function showSlide(index) {
+        if(!slides.length) return; // Sécurité si pas d'images
+        slides.forEach(s => s.classList.remove('active'));
+        bars.forEach(b => b.classList.remove('active'));
+        current = (index + slides.length) % slides.length;
+        slides[current].classList.add('active');
+        if(bars[current]) bars[current].classList.add('active');
+    }
 
-        if(nextBtn) nextBtn.onclick = () => showSlide(current + 1);
-        if(prevBtn) prevBtn.onclick = () => showSlide(current - 1);
-        setInterval(() => showSlide(current + 1), 5000);
+    if(nextBtn) nextBtn.onclick = () => showSlide(current + 1);
+    if(prevBtn) prevBtn.onclick = () => showSlide(current - 1);
+    setInterval(() => showSlide(current + 1), 5000);
 
-        // 2. SLIDER AVIS (TESTIMONIALS)
-        const testiCards = document.querySelectorAll('.testimonial-card');
-        const testiDots = document.querySelectorAll('.t-dot');
-        let currentTesti = 0;
+    // 2. SLIDER AVIS (TESTIMONIALS)
+    const testiCards = document.querySelectorAll('.testimonial-card');
+    const testiDots = document.querySelectorAll('.t-dot');
+    let currentTesti = 0;
 
-        function showTesti(index) {
-            testiCards.forEach(card => card.classList.remove('active'));
-            testiDots.forEach(dot => dot.classList.remove('active'));
-            currentTesti = (index + testiCards.length) % testiCards.length;
-            testiCards[currentTesti].classList.add('active');
-            testiDots[currentTesti].classList.add('active');
-        }
+    function showTesti(index) {
+        if(!testiCards.length) return;
+        testiCards.forEach(card => card.classList.remove('active'));
+        testiDots.forEach(dot => dot.classList.remove('active'));
+        currentTesti = (index + testiCards.length) % testiCards.length;
+        testiCards[currentTesti].classList.add('active');
+        if(testiDots[currentTesti]) testiDots[currentTesti].classList.add('active');
+    }
 
+    if(testiCards.length > 0) {
         setInterval(() => showTesti(currentTesti + 1), 6000);
+    }
 
-        // 3. COMPTEURS (STATS)
-        const stats = document.querySelectorAll('.stat-value');
-        const observer = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
-                if(entry.isIntersecting) {
-                    const target = +entry.target.getAttribute('data-target');
-                    const count = () => {
-                        const val = +entry.target.innerText;
-                        const speed = target / 50;
-                        if(val < target) {
-                            entry.target.innerText = Math.ceil(val + speed);
-                            setTimeout(count, 30);
-                        } else {
-                            entry.target.innerText = target;
-                        }
-                    };
-                    count();
-                    observer.unobserve(entry.target);
-                }
-            });
-        }, { threshold: 0.5 });
-        stats.forEach(s => observer.observe(s));
+    // 3. COMPTEURS (STATS)
+    const stats = document.querySelectorAll('.stat-value');
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if(entry.isIntersecting) {
+                const target = +entry.target.getAttribute('data-target');
+                const count = () => {
+                    const val = +entry.target.innerText;
+                    const speed = target / 50;
+                    if(val < target) {
+                        entry.target.innerText = Math.ceil(val + speed);
+                        setTimeout(count, 30);
+                    } else {
+                        entry.target.innerText = target;
+                    }
+                };
+                count();
+                observer.unobserve(entry.target);
+            }
+        });
+    }, { threshold: 0.5 });
+    stats.forEach(s => observer.observe(s));
 
-        // 4. MENU MOBILE (DRAWER)
-        const drawer = document.getElementById('mobileDrawer');
-        const overlay = document.getElementById('drawerOverlay');
-        const openBtn = document.getElementById('openMenu');
-        const closeBtn = document.getElementById('closeMenu');
+    // 4. MENU MOBILE (DRAWER)
+    const drawer = document.getElementById('mobileDrawer');
+    const overlay = document.getElementById('drawerOverlay');
+    const openBtn = document.getElementById('openMenu');
+    const closeBtn = document.getElementById('closeMenu');
 
-        const toggleMenu = (state) => {
-            drawer.classList.toggle('active', state);
-            overlay.classList.toggle('active', state);
-            document.body.style.overflow = state ? 'hidden' : '';
+    const toggleMenu = (state) => {
+        if(drawer) drawer.classList.toggle('active', state);
+        if(overlay) overlay.classList.toggle('active', state);
+        document.body.style.overflow = state ? 'hidden' : '';
+    };
+
+    if(openBtn) openBtn.onclick = () => toggleMenu(true);
+    if(closeBtn) closeBtn.onclick = () => toggleMenu(false);
+    if(overlay) overlay.onclick = () => toggleMenu(false);
+
+    // 5. NOUVEL ALBUM PHOTO (HORIZONTAL SLIDER)
+    const albumTrack = document.getElementById('albumTrack');
+    const albumPrev = document.getElementById('prevAlbum');
+    const albumNext = document.getElementById('nextAlbum');
+    let albumIndex = 0;
+
+    function updateAlbumPosition() {
+        if(!albumTrack) return;
+        const cards = document.querySelectorAll('.album-card');
+        if(cards.length === 0) return;
+        
+        // On calcule la largeur d'une carte + le gap (15px dans le CSS)
+        const cardWidth = cards[0].offsetWidth + 15; 
+        const maxScroll = albumTrack.scrollWidth - albumTrack.parentElement.offsetWidth;
+        
+        // Calcul du décalage
+        let offset = albumIndex * cardWidth;
+        
+        // Sécurité pour ne pas scroller dans le vide à la fin
+        if (offset > maxScroll) {
+            offset = maxScroll;
+            albumIndex--; // Stabilise l'index
+        }
+
+        albumTrack.style.transform = `translateX(-${offset}px)`;
+    }
+
+    if(albumNext) {
+        albumNext.onclick = () => {
+            const cards = document.querySelectorAll('.album-card');
+            if(albumIndex < cards.length - 1) {
+                albumIndex++;
+                updateAlbumPosition();
+            } else {
+                albumIndex = 0; // Retour au début
+                updateAlbumPosition();
+            }
         };
+    }
 
-        if(openBtn) openBtn.onclick = () => toggleMenu(true);
-        if(closeBtn) closeBtn.onclick = () => toggleMenu(false);
-        if(overlay) overlay.onclick = () => toggleMenu(false);
-    </script>
+    if(albumPrev) {
+        albumPrev.onclick = () => {
+            if(albumIndex > 0) {
+                albumIndex--;
+                updateAlbumPosition();
+            }
+        };
+    }
+
+    // Ajuster si on redimensionne la fenêtre (pour le responsive)
+    window.addEventListener('resize', updateAlbumPosition);
+</script>
 </body>
 </html>

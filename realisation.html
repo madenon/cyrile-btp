@@ -1,20 +1,23 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-   <meta charset="UTF-8">
+    <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     
-    <title>Nos Réalisations | Cyril BTP - Terrassement & Enrobé en Gironde</title>
-    <meta name="description" content="Découvrez nos chantiers réalisés sur le Bassin d'Arcachon : terrassement de maison, pose d'enrobé à Biganos, assainissement à Marcheprime et démolition en Gironde.">
+    <title>Nos Réalisations | Cyril BTP - Chantiers Terrassement & Enrobé 33</title>
+    <meta name="description" content="Découvrez les chantiers de Cyril BTP : terrassement à Marcheprime, pose d'enrobé à Biganos, élagage et assainissement sur le Bassin d'Arcachon. Qualité garantie.">
+    
     <link rel="canonical" href="https://cyrilbtp.info/realisation.html" />
 
     <meta property="og:type" content="website" />
-    <meta property="og:title" content="Découvrez nos Chantiers - Cyril BTP" />
-    <meta property="og:description" content="Expertise et rigueur : nos projets de terrassement et aménagement extérieur en images." />
+    <meta property="og:title" content="Projets & Réalisations Cyril BTP | Bassin d'Arcachon" />
+    <meta property="og:description" content="Expertise et rigueur en images : découvrez nos derniers chantiers de terrassement et aménagement extérieur en Gironde." />
     <meta property="og:image" content="https://cyrilbtp.info/images/lg.png" />
 
     <link rel="icon" type="image/png" href="images/lg.png" />
 
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Anton&family=Montserrat:wght@400;600;700;800;900&display=swap" rel="stylesheet">
     <script src="https://unpkg.com/lucide@latest"></script>
 
@@ -22,9 +25,22 @@
     <link rel="stylesheet" href="css/realisation.css">
     <link rel="stylesheet" href="css/footer.css">
 
-     <style>
-    /* 1. COMPORTEMENT PAR DÉFAUT (DESKTOP / ORDINATEUR) */
-     .cart-cisite {
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "CollectionPage",
+      "name": "Réalisations de Cyril BTP",
+      "description": "Galerie de projets de travaux publics, terrassement et aménagement extérieur réalisés en Gironde.",
+      "publisher": {
+        "@type": "HomeAndConstructionBusiness",
+        "name": "Cyril BTP"
+      }
+    }
+    </script>
+
+    <style>
+        /* 1. CARTE DE VISITE ET EFFETS */
+        .cart-cisite {
             width: 100%;
             max-width: 400px;
             margin: 20px auto;
@@ -44,105 +60,82 @@
 
         .carte:hover {
             transform: translateY(-10px) rotateX(5deg);
-            box-shadow: 0 15px 35px rgba(255, 102, 0, 0.3);
+            box-shadow: 0 15px 35px rgba(255, 107, 0, 0.4);
         }
 
-    
-    /* On cache le bouton burger sur ordinateur */
-    .menu-toggle {
-        display: none !important;
-    }
-
-    /* Le menu horizontal classique pour ordinateur */
-    .nav-menu {
-        display: flex !important;
-        flex-direction: row;
-        gap: 25px;
-        list-style: none;
-        align-items: center;
-    }
-
-    /* 2. NAVIGATION MOBILE (UNIQUEMENT SOUS 1024px) */
-    @media (max-width: 1024px) {
-        /* On affiche le bouton burger sur mobile */
+        /* 2. NAVIGATION ET RESPONSIVE */
         .menu-toggle {
-            display: flex !important;
-            align-items: center;
-            justify-content: center;
-            z-index: 1000;
-            background: #ff6b00; 
-            border: none;
-            color: white;
-            width: 45px;
-            height: 45px;
-            border-radius: 8px;
-            cursor: pointer;
-            transition: transform 0.2s;
+            display: none !important;
         }
 
-        /* Le menu se transforme en tiroir latéral (Drawer) */
         .nav-menu {
-            position: fixed;
-            top: 0;
-            right: -100%; 
-            width: 75%;
-            height: 100vh;
-            background: #0f172a; 
-            flex-direction: column !important; /* On empile les liens */
-            justify-content: center;
+            display: flex !important;
+            flex-direction: row;
+            gap: 25px;
+            list-style: none;
             align-items: center;
-            gap: 30px;
-            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
-            z-index: 999;
-            padding: 0;
-            margin: 0;
-            box-shadow: -10px 0 30px rgba(0,0,0,0.5);
         }
 
-        /* Quand on clique sur le burger, le menu arrive */
-        .nav-menu.active {
-            right: 0 !important;
+        @media (max-width: 1024px) {
+            .menu-toggle {
+                display: flex !important;
+                align-items: center;
+                justify-content: center;
+                z-index: 1000;
+                background: #ff6b00; 
+                border: none;
+                color: white;
+                width: 45px;
+                height: 45px;
+                border-radius: 8px;
+                cursor: pointer;
+            }
+
+            .nav-menu {
+                position: fixed;
+                top: 0;
+                right: -100%; 
+                width: 75%;
+                height: 100vh;
+                background: #0f172a; 
+                flex-direction: column !important;
+                justify-content: center;
+                transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+                z-index: 999;
+                box-shadow: -10px 0 30px rgba(0,0,0,0.5);
+            }
+
+            .nav-menu.active {
+                right: 0 !important;
+            }
         }
 
-        .nav-menu li a {
-            color: white !important;
-            font-size: 1.5rem;
-            font-family: 'Anton', sans-serif;
-            text-decoration: none;
-            text-transform: uppercase;
+        /* 3. EFFETS IMAGES */
+        .project-image {
+            overflow: hidden;
+            position: relative;
+            border-radius: 12px;
+            background: #e2e8f0;
         }
 
-        .menu-toggle:active {
-            transform: scale(0.9);
+        .project-image img {
+            transition: transform 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
         }
-    }
 
-    /* 3. EFFETS VISUELS ET IMAGES (SANS CHANGEMENT) */
-    .project-image {
-        overflow: hidden;
-        position: relative;
-        border-radius: 12px;
-        background: #e2e8f0;
-    }
+        .project-row:hover .project-image img {
+            transform: scale(1.08);
+        }
 
-    .project-image img {
-        transition: transform 0.6s cubic-bezier(0.4, 0, 0.2, 1);
-        width: 100%;
-        height: 100%;
-        object-fit: cover;
-        display: block;
-    }
-
-    .project-row:hover .project-image img {
-        transform: scale(1.08);
-    }
-
-    .slide-up {
-        opacity: 0;
-        transform: translateY(40px);
-        transition: all 0.7s ease-out;
-    }
-</style>
+        .slide-up {
+            opacity: 0;
+            transform: translateY(40px);
+            transition: all 0.7s ease-out;
+        }
+    </style>
 </head>
 <body>
 
@@ -303,7 +296,10 @@ Aménagement d'accès : Création de chemins de chantier et d'allées carrossabl
                     </div>
                     <p class="footer-desc">Expertise en démolition, terrassement et rénovation. Nous bâtissons vos projets avec rigueur.</p>
                     <div class="social-links">
-              <a href="https://www.facebook.com/share/1DgqxfAUC2/"><i data-lucide="facebook"></i></a>
+             <a class="facebook" target="_blank" href="https://www.facebook.com/share/1DgqxfAUC2/">
+                
+                <i data-lucide="facebook" style="color: #002395; background-color: white; border-radius: 20px;"> Facebook</i></a>
+
                     </div>
                 </div>
                 <div class="footer-column">
