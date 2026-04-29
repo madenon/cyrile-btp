@@ -268,7 +268,7 @@ body {
 
 .card-img-container img {
     width: 100%;
-    height: 400px; /* Ajusté car 80vh était trop grand pour une carte slider */
+    height: 360px; /* Ajusté car 80vh était trop grand pour une carte slider */
     object-fit: cover;
     transition: transform 0.5s ease;
 }
@@ -407,7 +407,7 @@ body {
     .slider-arrow { display: none; }
     .services-slider-container { max-width: 100%; }
     .nav-phone span { display: none; }
-    .card-img-container img { height: 300px; }
+    .card-img-container img { height: 280px; }
 }
 
 
